@@ -16,6 +16,7 @@ steps:
 - bash: |
     mkdir -p "$(Build.ArtifactStagingDirectory)/notebook"
     cp notebooks/$(NotebookName).py "$(Build.ArtifactStagingDirectory)/notebook/$(NotebookName)-$(Build.SourceVersion).py"
+    cp notebook-run.json.tmpl "$(Build.ArtifactStagingDirectory)/notebook/notebook-run.json.tmpl"
   displayName: 'Prepare Notebook Build Artifacts'
 - task: PublishBuildArtifacts@1
   displayName: Publish ARM Template Build Artifacts
